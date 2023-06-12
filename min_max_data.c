@@ -1,34 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   creating.c                                         :+:      :+:    :+:   */
+/*   min_max_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:38:54 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/05/10 01:43:40 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/11 19:41:13 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-void add_at_start(struct node* start)
+int min_data(list_t *stack)
 {
-    struct node *ptr;   
-    ptr -> link = start;
-    start = ptr;
-}
-// counting node by traversing the linked list
-
-int count_node(t_node *start)
-{
-    t_node *ptr = start;
-    while(ptr != NULL)
+    list_t *tmp;
+    int min;
+    
+    min = stack->data;
+    tmp = stack->link;
+    while(tmp != NULL)
     {
-        count++;
-        ptr = ptr->link;
+        if(tmp->data < min)
+            min = tmp->data;
+        tmp = tmp->link;
     }
-    return count;
+    return (min);
 }
 
+int max_data(list_t *stack)
+{
+    list_t *tmp;
+    int max;
+
+    max = stack->data;
+    tmp = stack->link;
+    while(tmp != NULL)
+    {
+        if(tmp->data > max)
+            max = tmp->data;
+        tmp = tmp->link;
+    }
+    return (max);
+}

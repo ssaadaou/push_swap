@@ -6,14 +6,12 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:40:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/07 17:02:09 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/12 01:12:53 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-// spliting the input parsing of av[1] by a delimiter
 
 static int	ft_count_split(char *s, char c)
 {

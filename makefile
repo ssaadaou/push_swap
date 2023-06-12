@@ -20,7 +20,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-SRC = operations.c utils.c split.c node.c
+SRC = main.c operations_eins.c operations_zwei.c utils.c split.c node.c \
+		sort_three_num.c sort_five_num.c min_max_data.c
 
 OBJ = $(SRC:.c=.o)
 
