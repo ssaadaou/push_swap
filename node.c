@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   node.c                                             :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:39:29 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/09 00:20:06 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/13 19:25:52 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "push_swap.h"
 
@@ -23,19 +23,23 @@ list_t *new_node(int num)
     head->link = NULL;
     return (head);
 }
-void add_node_end(list_t **head, list_t *new_node)
+list_t	*last_n(list_t	*stack)
 {
-    list_t *tmp;
+	while (stack->link)
+		stack = stack->link;
+	return (stack);
+}
+void	add_node_end(list_t **head, list_t *newnode)
+{
+	list_t	*temp;
 
-    if(*head == NULL)
-        *head = new_node;
-    else
-    {
-        tmp = *head;
-        while(tmp->link != NULL)
-            tmp = tmp->link;
-        tmp->link = new_node;
-    }   
+	temp = *head;
+	if (!*head)
+	{
+		*head = newnode;
+		return ;
+	}
+	last_n(temp)->link = newnode;
 }
 void add_node_top(list_t **head, list_t *new_node)
 {
