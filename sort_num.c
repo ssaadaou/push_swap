@@ -10,3 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void indexing_node(list_t *stack)
+{
+    int index = 0;
+    int size = stack_size(stack);
+    list_t *tmp = stack;
+    while(size)
+    {
+        tmp->index = index;
+        index++;
+        size--;
+    }
+}
+
+int main ()
+{
+    list_t *stack;
+    
+}

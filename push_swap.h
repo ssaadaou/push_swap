@@ -8,6 +8,7 @@
 typedef struct list
 {
     int data;
+    int index;
     struct list *link;
 }list_t;
 /// parsing
