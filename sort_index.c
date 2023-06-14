@@ -1,42 +1,51 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_num.c                                         :+:      :+:    :+:   */
+/*   sort_index.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:54:35 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/13 22:45:16 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/14 17:31:08 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
-
 
 #include "push_swap.h"
 
 void init_index(list_t *stack)
 {
-    list_t *tmp = stack;
-    while(tmp != NULL)
-    {
-        tmp->index = -1;
-        tmp = tmp->link;
-    }
+	list_t *tmp = stack;
+	while (tmp != NULL)
+	{
+		tmp->index = -1;
+		tmp = tmp->link;
+	}
 }
 
 int min_data_(list_t *stack)
 {
-    list_t *tmp;
-    int min;
-    
-    min = stack->data;
-    tmp = stack->link;
-    while(tmp != NULL)
-    {
-        if(tmp->index == -1 && tmp->data < min)
-            min = tmp->data;
-        tmp = tmp->link;
-    }
-    return (min);
+	list_t *tmp;
+	list_t *tmp1;
+	int min;
+
+	tmp1 = stack;
+	while (tmp1)
+	{
+		if (tmp1->index == -1)
+		{
+			min = tmp1->data;
+			break;
+		}
+		tmp1 = tmp1->link;
+	}
+	tmp = stack;
+	while (tmp != NULL)
+	{
+		if (tmp->index == -1 && tmp->data <= min)
+			min = tmp->data;
+		tmp = tmp->link;
+	}
+	return (min);
 }
 void index_node(list_t *stack)
 {
@@ -45,29 +54,28 @@ void index_node(list_t *stack)
 	list_t *tmp;
 	list_t *min_node;
 	init_index(stack);
-
-	while(index < stack_size(stack))
+	while (index < stack_size(stack))
 	{
 		i = 0;
 		int min = min_data_(stack);
 		tmp = stack;
 		min_node = NULL;
-		while(i < stack_size(stack) && tmp)
+		while (i < stack_size(stack))
 		{
-			if(tmp->data == min && tmp->index == -1)
+			if (tmp->data == min)
 			{
 				min_node = tmp;
-				break ;
+				break;
 			}
 			tmp = tmp->link;
 			i++;
 		}
-		if(min_node)
+		if (min_node)
 		{
 			min_node->index = index;
-			printf("Node w/ data %d index %d\n", min_node->data, min_node->index);
 			index++;
 		}
+		printf("inside the fct >> Node w/ data %d index %d\n\n", min_node->data, min_node->index);
 	}
 }
 
@@ -86,23 +94,13 @@ void index_node(list_t *stack)
 // 	index_node(tmp);
 // }
 
-
-
-
-
-
-
-
-
-
-
 // int main ()
 // {
 //     list_t *tmp = NULL;
 
 //     list_t *node1 = new_node(6);
 //     list_t *node2 = new_node(6);
-    
+
 //     add_node_end(&tmp,node1);
 //     add_node_end(&tmp,node2);
 //     min_value(tmp);
