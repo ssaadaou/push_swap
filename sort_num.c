@@ -13,19 +13,7 @@
 
 #include "push_swap.h"
 
-// void indexing_node(list_t *stack)
-// {
-//     int index = 0;
-//     int size = stack_size(stack);
-//     list_t *tmp = stack;
-//     while(size)
-//     {
-//         tmp->index = index;
-//         index++;
-//         size--;
-//     }
-// }
-void index(list_t *stack)
+void init_index(list_t *stack)
 {
     list_t *tmp = stack;
     while(tmp != NULL)
@@ -34,80 +22,90 @@ void index(list_t *stack)
         tmp = tmp->link;
     }
 }
-int	return_min_index(t_list	*stack)
-{
-	t_list	*temp;
-	t_list	*temp1;
-	int		value;
 
-	temp1 = stack;
-	temp = stack;
-	while (temp1)
-	{
-		if (temp1->index == -1)
-		{
-			value = temp1->data;
-			break ;
-		}
-		temp1 = temp1->next;
-	}
-	while (temp)
-	{
-		if (temp->data < value && temp->index == -1)
-			value = temp->data;
-		temp = temp->next;
-	}
-	return (value);
+int min_data_(list_t *stack)
+{
+    list_t *tmp;
+    int min;
+    
+    min = stack->data;
+    tmp = stack->link;
+    while(tmp != NULL)
+    {
+        if(tmp->index == -1 && tmp->data < min)
+            min = tmp->data;
+        tmp = tmp->link;
+    }
+    return (min);
 }
-
-void	reset_index(t_list	*stack)
+void index_node(list_t *stack)
 {
-	int	index;
+	int index = 0;
+	int i;
+	list_t *tmp;
+	list_t *min_node;
+	init_index(stack);
 
-	index = -1;
-	while (stack)
+	while(index < stack_size(stack))
 	{
-		stack->index = index;
-		stack = stack->next;
-	}
-}
-
-void	add_index_to_node(t_list	*stack)
-{
-	int		index;
-	int		size;
-	t_list	*temp;
-
-	index = 0;
-	reset_index(stack);
-	size = list_size(stack);
-	while (size != 0)
-	{
-		temp = stack;
-		while (temp != NULL)
+		i = 0;
+		int min = min_data_(stack);
+		tmp = stack;
+		min_node = NULL;
+		while(i < stack_size(stack) && tmp)
 		{
-			if (temp->data == return_min_index(stack))
+			if(tmp->data == min && tmp->index == -1)
 			{
-				temp->index = index;
-				index++;
-				size--;
+				min_node = tmp;
 				break ;
 			}
-			temp = temp->next;
+			tmp = tmp->link;
+			i++;
+		}
+		if(min_node)
+		{
+			min_node->index = index;
+			printf("Node w/ data %d index %d\n", min_node->data, min_node->index);
+			index++;
 		}
 	}
 }
 
-int main ()
-{
-    list_t *tmp = NULL;
+// int main()
+// {
+// 	list_t *tmp = NULL;
+// 	list_t *node1 = new_node(2);
+// 	list_t *node2 = new_node(10);
+// 	list_t *node3= new_node(-3);
+// 	list_t *node4 = new_node(0);
 
-    list_t *node1 = new_node(6);
-    list_t *node2 = new_node(6);
+// 	add_node_end(&tmp, node1);
+// 	add_node_end(&tmp, node2);
+// 	add_node_end(&tmp, node3);
+// 	add_node_end(&tmp, node4);
+// 	index_node(tmp);
+// }
+
+
+
+
+
+
+
+
+
+
+
+// int main ()
+// {
+//     list_t *tmp = NULL;
+
+//     list_t *node1 = new_node(6);
+//     list_t *node2 = new_node(6);
     
-    add_node_end(&tmp,node1);
-    add_node_end(&tmp,node2);
-    min_value(tmp);
-    printf("%d\n", tmp->index);
-    printf("%d\n", tmp->link->index);
-}
+//     add_node_end(&tmp,node1);
+//     add_node_end(&tmp,node2);
+//     min_value(tmp);
+//     printf("%d\n", tmp->index);
+//     printf("%d\n", tmp->link->index);
+// }

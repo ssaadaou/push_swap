@@ -59,5 +59,5 @@ int stack_size(list_t *stack);
 void sort_three(list_t **stack);
 int is_sorted(list_t *stack);
 void sort_five(list_t **stack_a, list_t **stack_b);
-void indexing_node(list_t *stack);
+void index_node(list_t *stack);
 #endif

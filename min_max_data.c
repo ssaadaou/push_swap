@@ -29,6 +29,7 @@ int min_data(list_t *stack)
     return (min);
 }
 
+
 int max_data(list_t *stack)
 {
     list_t *tmp;

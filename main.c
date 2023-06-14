@@ -36,6 +36,7 @@ int main(int ac, char **av)
         add_node_end(&stack_a , new_node(ft_atoi(str[i])));
         i++;
     }
+    index_node(stack_a);
     sorting(stack_a, stack_b);
 }
 
