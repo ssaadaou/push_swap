@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/13 20:57:31 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/15 22:37:56 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -50,6 +50,7 @@ void sb(list_t **stack);
 void push_a(list_t **a, list_t **b);
 void push_b(list_t **a, list_t **b);
 void ra(list_t **a);
+void rb(list_t **b);
 void rr(list_t **a, list_t **b);
 void rra(list_t **a);
 void rrr(list_t **a, list_t **b);
@@ -60,4 +61,5 @@ void sort_three(list_t **stack);
 int is_sorted(list_t *stack);
 void sort_five(list_t **stack_a, list_t **stack_b);
 void index_node(list_t *stack);
+void sort_100(list_t **stack_a, list_t **stack_b, int n);
 #endif

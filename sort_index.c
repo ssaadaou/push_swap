@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:54:35 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/14 17:31:08 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/15 22:25:31 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -75,7 +75,7 @@ void index_node(list_t *stack)
 			min_node->index = index;
 			index++;
 		}
-		printf("inside the fct >> Node w/ data %d index %d\n\n", min_node->data, min_node->index);
+		// printf("inside the fct >> Node w/ data %d index %d\n\n", min_node->data, min_node->index);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 03:38:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/14 16:25:31 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/15 22:46:18 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -36,9 +36,11 @@ int main(int ac, char **av)
         add_node_end(&stack_a , new_node(ft_atoi(str[i])));
         i++;
     }
+    puts("here\n");
     index_node(stack_a);
     // printf("Node w/ data %d index %d\n", stack_a->data, stack_a->index);
     sorting(stack_a, stack_b);
+    return 0;
 }
 
 int valid(int ac, char **str)
