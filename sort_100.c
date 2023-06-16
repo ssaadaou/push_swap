@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:27:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/17 00:56:47 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/17 00:58:14 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -61,5 +61,5 @@ void return_to_a(list_t **stack_a, list_t **stack_b)
         }
     }
     
+    exit(1); /////
 }
-    // exit(1);
