@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/16 19:21:11 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:48:34 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -55,6 +55,7 @@ void ra(list_t **a);
 void rb(list_t **b);
 void rr(list_t **a, list_t **b);
 void rra(list_t **a);
+void rrb(list_t **b);
 void rrr(list_t **a, list_t **b);
 int stack_size(list_t *stack);
 
