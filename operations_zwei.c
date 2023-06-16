@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   operations_zwei.c                                  :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:12:03 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/12 01:12:03 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:12:19 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 
 #include "push_swap.h"
@@ -75,6 +75,24 @@ void rra(list_t **a)
     *a = last;
 	ft_putstr("rra\n");
 }
+void rrb(list_t **b)
+{
+    if(!b || !(*b) || !(*b)->link)
+        return;
+
+    list_t *tmp = *b;
+    list_t *last;
+
+    while(tmp->link->link != NULL)
+        tmp = tmp->link;
+
+    last = tmp->link;
+    tmp->link = NULL;
+    last->link = *b;
+    *b = last;
+	ft_putstr("rrb\n");
+}
+
 void rrr(list_t **a, list_t **b)
 {
 	rra(a);

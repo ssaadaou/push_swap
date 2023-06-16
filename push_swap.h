@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/15 22:37:56 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:21:11 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,6 +38,8 @@ void ft_putstr(char *buff);
 int ft_strslen(char **str, char *del, int ac);
 int valid(int ac, char **av);
 void sorting(list_t *stack_a, list_t *stack_b);
+int get_position(list_t *stack, int data);
+
 /// linked list
 list_t *new_node(int num);
 list_t *last_node(list_t *head);
@@ -62,4 +64,5 @@ int is_sorted(list_t *stack);
 void sort_five(list_t **stack_a, list_t **stack_b);
 void index_node(list_t *stack);
 void sort_100(list_t **stack_a, list_t **stack_b, int n);
+void return_to_a(list_t **stack_a, list_t **stack_b);
 #endif

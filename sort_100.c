@@ -6,11 +6,12 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:27:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/15 22:38:35 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:22:24 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
+
 void sort_100(list_t **stack_a, list_t **stack_b, int n)
 {
      int chunk;
@@ -22,9 +23,9 @@ void sort_100(list_t **stack_a, list_t **stack_b, int n)
      {
         while((*stack_a) != NULL && ((*stack_a)->index > chunk))
             ra(stack_a);
-        if((*stack_a)->index < (chunk - (next_chunk / 2)))
+        if((*stack_a)->index <= (chunk - (next_chunk / 2)))
             push_b(stack_a, stack_b);
-        else if(  (*stack_a)->index >= (chunk - (next_chunk / 2)))
+        else if((*stack_a)->index > (chunk - (next_chunk / 2)))
         {
             push_b(stack_a, stack_b);
             rb(stack_b);
@@ -33,4 +34,24 @@ void sort_100(list_t **stack_a, list_t **stack_b, int n)
         if( i == chunk)
             chunk += next_chunk;
      }
+     return_to_a(*stack_a, *stack_b);
+}
+void return_to_a(list_t **stack_a, list_t **stack_b)
+{
+    int max;
+    int p ;
+    int size_st_b = stack_size(*stack_b);
+    while(size_st_b != 0)
+    {
+        max = max_data(*stack_b);
+        p = get_position(*stack_b, max);
+        while((*stack_b)->data != max)
+        {
+            if(p < size_st_b / 2)
+                rb(*stack_b);
+            else if(p > size_st_b / 2) 
+                rrb(*stack_b);
+        }
+        push_a(*stack_b,*stack_b);
+    }
 }
