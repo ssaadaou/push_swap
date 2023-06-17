@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:21:02 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/15 22:45:47 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/17 16:13:17 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -43,6 +43,7 @@ void sorting(list_t *stack_a, list_t *stack_b)
         sort_five(&stack_a, &stack_b);
     }
     else if(size <= 100 && size > 5 )
-        sort_100(&stack_a ,&stack_b, size);
-    
+        sort_diff_range(&stack_a ,&stack_b, size, 100);
+    else
+        sort_diff_range(&stack_a ,&stack_b, size, 500);
 }

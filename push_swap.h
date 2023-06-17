@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/16 19:48:34 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/17 16:12:05 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -64,6 +64,6 @@ void sort_three(list_t **stack);
 int is_sorted(list_t *stack);
 void sort_five(list_t **stack_a, list_t **stack_b);
 void index_node(list_t *stack);
-void sort_100(list_t **stack_a, list_t **stack_b, int n);
+void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag);
 void return_to_a(list_t **stack_a, list_t **stack_b);
 #endif

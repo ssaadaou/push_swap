@@ -6,18 +6,21 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:27:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/17 01:01:01 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/17 16:14:38 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
 
-void sort_100(list_t **stack_a, list_t **stack_b, int n)
+void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
 {
      int chunk;
      int next_chunk = 0;
      int i = 0;
-     chunk = n / 5;
+     if (flag == 100)
+        chunk = n / 5;
+    else
+        chunk = n / 20;
      next_chunk += chunk;
      while(*stack_a)
      {
@@ -27,15 +30,15 @@ void sort_100(list_t **stack_a, list_t **stack_b, int n)
             push_b(stack_a, stack_b);
         else if((*stack_a)->index > (chunk - (next_chunk / 2)))
         {
-            push_b(stack_a, stack_b);
-            rb(stack_b);
+           push_b(stack_a, stack_b);
+           rb(stack_b);
         }
-            i++;
+        i++;
         if( i == chunk)
-            chunk += next_chunk;
-     }
-        puts ("now back to stack_a");
-     return_to_a(stack_a, stack_b);
+           chunk += next_chunk;
+    }
+    puts ("now back to stack_a");
+    return_to_a(stack_a, stack_b);
 }
 void return_to_a(list_t **stack_a, list_t **stack_b)
 {
