@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/17 21:26:20 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 02:43:54 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -40,6 +40,7 @@ int valid(int ac, char **av);
 void sorting(list_t *stack_a, list_t *stack_b);
 int get_position(list_t *stack, int data);
 void free_stack(list_t *stack);
+void parse(list_t **stack_a, list_t **stack_b, int ac, char **av);
 /// linked list
 list_t *new_node(int num);
 list_t *last_node(list_t *head);

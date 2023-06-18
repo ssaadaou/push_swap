@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/07 12:20:40 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/06/18 17:13:37 by ssaadaou         ###   ########.fr        #
+#    Created: 2023/06/18 17:20:46 by ssaadaou          #+#    #+#              #
+#    Updated: 2023/06/18 17:27:12 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-NAME = push_swap
 
-HEADER = push_swap.h
+NAME = bonus/checker
+
+HEADER = bonus/bonus.h
 
 CC = cc
 
@@ -20,18 +21,16 @@ CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 RM = rm -rf
 
-SRC = push_swap.c operations_eins.c operations_zwei.c utils.c split.c node.c \
-		sort_three_num.c sort_five_num.c min_max_data.c sorting.c sort_index.c \
-		sort_100_500.c valid_parse.c
+SRC = checker.c operations_eins.c operations_zwei.c utils.c split.c  node.c valid_parse.c get_next_line.c get_next_line_utils.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.c $(HEADER)
+%.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
