@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 02:43:54 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:19:37 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -32,7 +32,7 @@ int ft_atoi(char *s);
 int _free(char **res);
 int ft_duplicate(char **str);
 int is_empty(int ac, char **str);
-char *ft_strjoin(int num_args, char **str, char *delimiter);
+char *mein_strjoin(int num_args, char **str, char *delimiter);
 int is_digit(int c);
 void ft_putstr(char *buff);
 int ft_strslen(char **str, char *del, int ac);

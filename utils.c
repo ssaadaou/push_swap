@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:13:19 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/13 20:50:43 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:19:11 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -85,7 +85,7 @@ int ft_duplicate(char **str)
 	return(1);
 }
 
-char	*ft_strjoin(int ac, char **str, char *del)
+char	*mein_strjoin(int ac, char **str, char *del)
 {
 	int		i;
 	int		j;

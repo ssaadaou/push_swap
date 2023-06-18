@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 02:41:49 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 02:49:49 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:20:01 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -52,7 +52,7 @@ void parse(list_t **stack_a, list_t **stack_b, int ac, char **av)
     (void)stack_b;
     join = NULL;
     is_empty(ac, av);
-    join = ft_strjoin(ac,av," ");
+    join = mein_strjoin(ac,av," ");
     free(join);
     str = splitt(join, ' ');
     if (!valid(ac, str))

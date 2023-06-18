@@ -6,23 +6,23 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 21:45:20 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 17:02:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 20:15:56 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "bonus.h"
 
-int	ft_strlen(char *s)
-{
-	int	i;
+// int	ft_strlen(char *s)
+// {
+// 	int	i;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	if (!s)
+// 		return (0);
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
 char	*ft_strjoin(char *s1, char *s2)
 {
@@ -84,9 +84,3 @@ int	ft_strchr(char *s)
 	}
 	return (0);
 }
-
-// #include<stdio.h>
-// int main()
-// {
-// 	printf("---->>> %d\n", ft_strchr("hella"));
-// }
