@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 01:40:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 00:16:09 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/06/18 22:36:33 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/06/18 23:11:44 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "push_swap.h"
-
+#include "bonus.h"
 
 static int	ft_count_split(char *s, char c)
 {
@@ -103,26 +102,6 @@ char **splitt(char *s, char c)
 			return (_free(res), NULL);
 		i++;
 	}
+	printf("split >> %s\n", res[i]);
 	return (res);
-}
-
-int is_digit(int c)
-{
-    if(c >= '0' && c <= '9')
-        return (1);
-    return (0);
-}
-int ft_integer(char *s)
-{
-    int i = 0;
-    
-    if(s[0] == '-' || s[0] == '+')
-            i++;
-    while(s[i])
-    {
-        if(!is_digit(s[i]))
-            return (0);
-        i++;
-    }
-    return (1);
 }

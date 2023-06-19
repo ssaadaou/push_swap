@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:13:19 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 20:19:11 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 22:30:03 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -95,7 +95,6 @@ char	*mein_strjoin(int ac, char **str, char *del)
 
 	i = 1;
 	x = 0;
-	is_empty(ac, str);
 	len = ft_strslen(str, del, ac);
 	tmp = malloc(sizeof(char) * (len + 1));
 	if(!tmp)

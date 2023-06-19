@@ -1,16 +1,16 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   new_nodes.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 01:39:29 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 22:39:50 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/06/18 22:40:06 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/06/19 00:08:16 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "push_swap.h"
+#include "bonus.h"
 
 list_t *new_node(int num)
 {
@@ -23,12 +23,14 @@ list_t *new_node(int num)
     head->link = NULL;
     return (head);
 }
+
 list_t	*last_n(list_t	*stack)
 {
 	while (stack->link)
 		stack = stack->link;
 	return (stack);
 }
+
 void	add_node_end(list_t **head, list_t *newnode)
 {
 	list_t	*temp;
@@ -41,10 +43,16 @@ void	add_node_end(list_t **head, list_t *newnode)
 	}
 	last_n(temp)->link = newnode;
 }
-void add_node_top(list_t **head, list_t *new_node)
+int ft_strslen(char **str, char *del,int ac)
 {
-    if(!new_node)
-        return;
-    new_node->link = *head;
-    *head = new_node;
+	int i = 1;
+	int len = 0;
+	while(i < ac)
+	{
+		len += ft_strlen(str[i]);
+		if(i < ac - 1)
+			len += ft_strlen(del);
+		i++;
+	}
+	return(len);
 }

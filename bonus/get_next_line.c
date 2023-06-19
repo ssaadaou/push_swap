@@ -6,11 +6,13 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 21:44:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 17:02:44 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/18 23:09:27 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "bonus.h"
+#include "get_next_line.h"
+
 
 char	*ft_line(char *save)
 {
