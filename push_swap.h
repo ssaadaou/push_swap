@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:16:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 20:19:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 20:31:00 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -36,7 +36,7 @@ char *mein_strjoin(int num_args, char **str, char *delimiter);
 int is_digit(int c);
 void ft_putstr(char *buff);
 int ft_strslen(char **str, char *del, int ac);
-int valid(int ac, char **av);
+int valid( char **av);
 void sorting(list_t *stack_a, list_t *stack_b);
 int get_position(list_t *stack, int data);
 void free_stack(list_t *stack);

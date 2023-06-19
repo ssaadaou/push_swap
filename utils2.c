@@ -1,58 +1,36 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_bonus.c                                      :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/18 22:31:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 20:06:58 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/06/19 20:14:28 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/06/19 20:16:21 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include "bonus.h"
+#include "push_swap.h"
 
-void	ft_putchar(char c)
+int is_digit(int c)
 {
-	write(1, &c, 1);
+    if(c >= '0' && c <= '9')
+        return (1);
+    return (0);
 }
-
-void	ft_putstr(char *buff)
+int ft_integer(char *s)
 {
-    while (*buff)
-	{
-		ft_putchar(*buff);
-		buff++;
-	}
-}
-int ft_atoi(char *s)
-{
-	int	i;
-	int	res;
-	int sign;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((s[i] == ' ') || (s[i] >= 9 && s[i] <= 13))
-		i++;
-	if (s[i] == '0')
-	{
-		while(s[i] == '0')
-			i++;
-	}
-	if (s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
-			sign = -1;
-		i++;
-	}
-	while (s[i] && s[i] >= '0' && s[i] <= '9')
-	{
-		res = (res * 10) + (s[i] - '0');
-		i++;
-	}
-	return (res * sign);
+    int i = 0;
+    
+    if(s[0] == '-' || s[0] == '+')
+            i++;
+    while(s[i])
+    {
+        if(!is_digit(s[i]))
+            return (0);
+        i++;
+    }
+    return (1);
 }
 
 int ft_duplicate(char **str)
@@ -75,36 +53,6 @@ int ft_duplicate(char **str)
 	return(1);
 }
 
-char	*mein_strjoin(int ac, char **str, char *del)
-{
-	int		i;
-	int		j;
-	int 	x;
-	int		len;
-	char	*tmp;
-
-	i = 1;
-	x = 0;
-	len = ft_strslen(str, del, ac);
-	tmp = malloc(sizeof(char) * (len + 1));
-	if(!tmp)
-		return(NULL);
-	while(i < ac)
-	{	
-		j= 0 ;
-		while(str[i][j] != '\0')
-			tmp[x++] = str[i][j++];
-		if(i < ac - 1)
-		{
-			j = 0;
-			while (del[j] != '\0')
-				tmp[x++] = del[j++];
-		}
-		i++;
-	}
-	return(tmp);
-}
-
 int is_space(char c)
 {
 	if (c == '\t' || c == '\f' || c == '\v'
@@ -112,7 +60,6 @@ int is_space(char c)
 		return (1);
 	return (0);
 }
-
 
 int is_empty(int ac, char **str)
 {

@@ -1,14 +1,3 @@
-/******************************************************************************/
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   bonus.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/18 17:21:50 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 23:56:35 by ssaadaou         ###   ########.fr       */
-/*                                                                            */
-/******************************************************************************/
 
 #ifndef BONUS_H
 # define BONUS_H
@@ -34,16 +23,16 @@ typedef struct list
 
 /// PARCING
 char **splitt(char *s, char c);
-int ft_integer(char *s);
+int ft_integer_(char *s);
 int ft_atoi(char *s);
 int _free(char **res);
 int ft_duplicate(char **str);
 int is_empty(int ac, char **str);
 char *mein_strjoin(int num_args, char **str, char *delimiter);
-int is_digit(int c);
+int is_digit_(int c);
 void ft_putstr(char *buff);
 int ft_strslen(char **str, char *del, int ac);
-int valid(int ac, char **av);
+int valid(char **av);
 void sorting(list_t *stack_a, list_t *stack_b);
 int get_position(list_t *stack, int data);
 void free_stack(list_t *stack);
@@ -55,8 +44,7 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(char *s);
 int	ft_strchr(char *s);
 int	ft_strlen(char *s);
-void free_stack(list_t *stack);
-int valid(int ac, char **av);
+int valid(char **av);
 int is_sorted(list_t *stack);
 int ft_strcmp(char *s1,char *s2);
 list_t *new_node(int num);

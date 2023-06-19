@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:21:02 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 01:37:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:00:14 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,11 +23,12 @@ int is_sorted(list_t *stack)
     return(1);
 }
 void sorting(list_t *stack_a, list_t *stack_b)
-{
-    int size = stack_size(stack_a) ;
+{   
+    int size;
+
     if (is_sorted(stack_a) == 1)
         exit(0);
-        puts("madatory");
+    size = stack_size(stack_a);
     if (size == 2)
 	{
 		if ((stack_a->data) > (stack_a->link->data))
@@ -36,16 +37,13 @@ void sorting(list_t *stack_a, list_t *stack_b)
             exit (0);
         }
 	}
-        puts("sorting fct\n");
     if (size == 3)
         sort_three(&stack_a);
-    if(size <= 5)
-    {
+    if(size <= 4 && size < 20)
         sort_five(&stack_a, &stack_b);
-    }
-    else if(size <= 100 && size > 5 )
+    else if(size >= 20 && size <= 200)
         sort_diff_range(&stack_a ,&stack_b, size, 100);
-    // else
-    //     sort_diff_range(&stack_a ,&stack_b, size, 500);
+    else
+        sort_diff_range(&stack_a ,&stack_b, size, 500);
     free_stack(stack_a);
 }

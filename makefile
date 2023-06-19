@@ -6,39 +6,53 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 12:20:40 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/06/18 22:59:03 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/06/19 21:51:43 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = push_swap
-
+CHECKER = checker
 HEADER = push_swap.h
+
+BONUS_HEADER = ./bonus/bonus.h
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-fsanitize=address
 
 RM = rm -rf
 
 SRC = push_swap.c operations_eins.c operations_zwei.c utils.c split.c node.c \
 		sort_three_num.c sort_five_num.c min_max_data.c sorting.c sort_index.c \
-		sort_100_500.c valid_parse.c
+		sort_100_500.c valid_parse.c utils2.c
 
+
+BONUS_SRC = ./bonus/checker.c ./bonus/operations_eins.c ./bonus/operations_zwei.c split.c \
+			./bonus/new_nodes.c ./bonus/get_next_line.c ./bonus/get_next_line_utils.c \
+			./bonus/adds_function.c ./bonus/valid_numbers.c ./bonus/parse_bonus.c
 
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(BONUS_SRC:.c=.o)
+
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
+$(NAME): $(OBJ) $(HEADER)
+	$(CC) $(CFLAGS)  $(OBJ) -o $(NAME) 
 
-%.o : %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus : $(CHECKER)
+
+
+$(CHECKER) : $(OBJ_BONUS) $(BONUS_HEADER)
+	$(CC) $(CFLAGS) $(OBJ_BONUS) -o $(CHECKER)
+
+# %.o : %.c $(HEADER) 
+# 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	$(RM) $(NAME) $(BONUS_NAME)
+	$(RM) $(NAME) $(CHECKER) $(OBJ_BONUS)
 
-re: fclean all
+re: fclean all bonus

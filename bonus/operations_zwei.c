@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:12:03 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 23:20:43 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:36:39 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -35,7 +35,6 @@ void ra(list_t **a)
 	first->link = NULL;
 	last = last_node(*a);
 	last->link = first;
-	ft_putstr("ra\n");
 }
 
 void rb(list_t **b)
@@ -49,7 +48,6 @@ void rb(list_t **b)
 	first->link = NULL;
 	last = last_node(*b);
 	last->link = first;
-	ft_putstr("rb\n");
 }
 
 void rra(list_t **a)
@@ -67,7 +65,6 @@ void rra(list_t **a)
     tmp->link = NULL;
     last->link = *a;
     *a = last;
-	ft_putstr("rra\n");
 }
 void rrb(list_t **b)
 {
@@ -84,18 +81,15 @@ void rrb(list_t **b)
     tmp->link = NULL;
     last->link = *b;
     *b = last;
-	ft_putstr("rrb\n");
 }
 
 void	rr(list_t **a, list_t **b)
 {
 	ra(a);
 	rb(b);
-	ft_putstr("rr\n");
 }
 void rrr(list_t **a, list_t **b)
 {
 	rra(a);
 	rra(b);
-	ft_putstr("rrr\n");
 }

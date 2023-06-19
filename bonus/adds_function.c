@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 15:00:43 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 22:41:14 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 19:12:27 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@ int is_sorted(list_t *stack)
 
 int ft_strcmp(char *s1,char *s2)
 {
-    while(*s1 && (*s1 == *s2))
+    while(*s1 && *s2 && (*s1 == *s2))
     {
         s1++;
         s2++;

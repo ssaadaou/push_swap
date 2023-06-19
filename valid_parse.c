@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 02:41:49 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 20:20:01 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:34:12 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,12 +24,10 @@ void free_stack(list_t *stack)
     }
 }
 
-int valid(int ac, char **str)
+int valid(char **str)
 {
     int i ;
-    
-    if(ac == 1)
-        return 0;
+
     i = 0;
     while(str[i] != NULL)
     {
@@ -50,18 +48,20 @@ void parse(list_t **stack_a, list_t **stack_b, int ac, char **av)
     char *join;
     
     (void)stack_b;
-    join = NULL;
     is_empty(ac, av);
     join = mein_strjoin(ac,av," ");
-    free(join);
     str = splitt(join, ' ');
-    if (!valid(ac, str))
+    free(join);
+    if (!valid(str))
     {
-        ft_putstr("no valid input\n");
+        ft_putstr("error : no valid input\n");
         exit(1);
     }
     i = 0;
-    while(str[i++] != NULL)
+    while(str[i] != NULL)
+    {
         add_node_end(stack_a , new_node(ft_atoi(str[i])));
+        i++;
+    }
     _free(str);
 }

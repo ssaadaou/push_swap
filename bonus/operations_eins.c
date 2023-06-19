@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:39:47 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 23:55:54 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:36:18 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,7 +21,6 @@ void sa(list_t **stack)
 	tmp = (*stack)->data;
 	(*stack)->data = (*stack)->link->data;
 	(*stack)->link->data = tmp;
-	ft_putstr("sa\n");
 }
 
 void sb(list_t **stack)
@@ -33,13 +32,11 @@ void sb(list_t **stack)
 	tmp = (*stack)->data;
 	(*stack)->data = (*stack)->link->data;
 	(*stack)->link->data = tmp;
-	ft_putstr("sb\n");
 }
 void ss(list_t **a, list_t **b)
 {
 	sa(a);
 	sb(b);
-	ft_putstr("ss\n");
 }
 
 void push_a(list_t **a, list_t **b)
@@ -52,7 +49,6 @@ void push_a(list_t **a, list_t **b)
 		tmp->link = *a;
 		*a = tmp;
 	}
-	ft_putstr("pa\n");
 }
 void push_b(list_t **a, list_t **b)
 {
@@ -64,5 +60,4 @@ void push_b(list_t **a, list_t **b)
 		tmp->link = *b;
 		*b = tmp;
 	}
-	ft_putstr("pb\n");
 }

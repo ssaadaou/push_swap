@@ -6,21 +6,11 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:13:19 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 22:30:03 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 20:16:15 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "push_swap.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 void	ft_putchar(char c)
 {
@@ -35,6 +25,17 @@ void	ft_putstr(char *buff)
 		buff++;
 	}
 }
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
 int ft_atoi(char *s)
 {
 	int	i;
@@ -63,26 +64,6 @@ int ft_atoi(char *s)
 		i++;
 	}
 	return (res * sign);
-}
-
-int ft_duplicate(char **str)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while(str[i])
-	{
-		j = i + 1;
-		while(str[j])
-		{
-			if(ft_atoi (str[i]) == ft_atoi (str[j]))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return(1);
 }
 
 char	*mein_strjoin(int ac, char **str, char *del)
@@ -114,32 +95,7 @@ char	*mein_strjoin(int ac, char **str, char *del)
 	}
 	return(tmp);	
 }
-int is_space(char c)
-{
-	if (c == '\t' || c == '\f' || c == '\v'
-		|| c == '\n' || c == '\r' || c == ' ')
-		return (1);
-	return (0);
-}
 
-int is_empty(int ac, char **str)
-{
-	int i = 1;
-	size_t j;
-	while(i < ac)
-	{
-		j = 0;
-		while(is_space(str[i][j] ))
-			j++;
-		if(str[i][j] == '\0')
-		{
-			ft_putstr("empty input\n");
-			exit (1);
-		}
-		i++;
-	}
-	return(1);
-}
 int ft_strslen(char **str, char *del,int ac)
 {
 	int i = 1;

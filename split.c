@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:40:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 00:16:09 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 21:53:40 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,9 +24,10 @@ static int	ft_count_split(char *s, char c)
 	{
 		while (s[i] && c != s[i])
 			i++;
-		while (c && c == s[i])
+		while (s[i] && c == s[i])
 			i++;
-		count++;
+		if(s[i] || c == s[i - 1])
+			count++;
 	}
 	return (count);
 }
@@ -90,7 +91,7 @@ char **splitt(char *s, char c)
 	i = 0;
 	while (*s && c == (char)*s)
 		s++;
-	count = ft_count_split((char *)s, c);
+	count = ft_count_split(s, c);
 	res = malloc((count + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
@@ -98,31 +99,10 @@ char **splitt(char *s, char c)
 	i = 0;
 	while (i < count)
 	{
-		s = ft_word((char *)s, c, res + i);
+		s = ft_word(s, c, res + i);
 		if (!s)
 			return (_free(res), NULL);
 		i++;
 	}
 	return (res);
-}
-
-int is_digit(int c)
-{
-    if(c >= '0' && c <= '9')
-        return (1);
-    return (0);
-}
-int ft_integer(char *s)
-{
-    int i = 0;
-    
-    if(s[0] == '-' || s[0] == '+')
-            i++;
-    while(s[i])
-    {
-        if(!is_digit(s[i]))
-            return (0);
-        i++;
-    }
-    return (1);
 }
