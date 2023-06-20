@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 01:40:05 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 21:53:40 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:05:37 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,8 +26,7 @@ static int	ft_count_split(char *s, char c)
 			i++;
 		while (s[i] && c == s[i])
 			i++;
-		if(s[i] || c == s[i - 1])
-			count++;
+		count++;
 	}
 	return (count);
 }

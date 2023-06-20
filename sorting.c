@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:21:02 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 21:00:14 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/20 16:38:26 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,6 @@ int is_sorted(list_t *stack)
 void sorting(list_t *stack_a, list_t *stack_b)
 {   
     int size;
-
     if (is_sorted(stack_a) == 1)
         exit(0);
     size = stack_size(stack_a);
@@ -37,11 +36,11 @@ void sorting(list_t *stack_a, list_t *stack_b)
             exit (0);
         }
 	}
-    if (size == 3)
+    else if (size == 3)
         sort_three(&stack_a);
-    if(size <= 4 && size < 20)
+    else if(size == 4 || size == 5)
         sort_five(&stack_a, &stack_b);
-    else if(size >= 20 && size <= 200)
+    else if(size >= 6 && size <= 200)
         sort_diff_range(&stack_a ,&stack_b, size, 100);
     else
         sort_diff_range(&stack_a ,&stack_b, size, 500);

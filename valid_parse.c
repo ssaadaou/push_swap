@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 02:41:49 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 21:34:12 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/20 17:58:40 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -50,7 +50,13 @@ void parse(list_t **stack_a, list_t **stack_b, int ac, char **av)
     (void)stack_b;
     is_empty(ac, av);
     join = mein_strjoin(ac,av," ");
+    printf("join #### %s\n", join);
     str = splitt(join, ' ');
+    // int j = 0;
+    // while(str[j])
+    // {
+    //     printf("splitt <<<<< >>>>> %s\n", str[j++]);
+    // }
     free(join);
     if (!valid(str))
     {
