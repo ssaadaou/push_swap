@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:54:35 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 19:26:31 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 23:23:35 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -75,35 +75,5 @@ void index_node(list_t *stack)
 			min_node->index = index;
 			index++;
 		}
-		// printf("inside the fct >> Node w/ data %d index %d\n\n", min_node->data, min_node->index);
 	}
 }
-
-// int main()
-// {
-// 	list_t *tmp = NULL;
-// 	list_t *node1 = new_node(2);
-// 	list_t *node2 = new_node(10);
-// 	list_t *node3= new_node(-3);
-// 	list_t *node4 = new_node(0);
-
-// 	add_node_end(&tmp, node1);
-// 	add_node_end(&tmp, node2);
-// 	add_node_end(&tmp, node3);
-// 	add_node_end(&tmp, node4);
-// 	index_node(tmp);
-// }
-
-// int main ()
-// {
-//     list_t *tmp = NULL;
-
-//     list_t *node1 = new_node(6);
-//     list_t *node2 = new_node(6);
-
-//     add_node_end(&tmp,node1);
-//     add_node_end(&tmp,node2);
-//     min_value(tmp);
-//     printf("%d\n", tmp->index);
-//     printf("%d\n", tmp->link->index);
-// }

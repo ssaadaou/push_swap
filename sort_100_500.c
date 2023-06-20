@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:27:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 19:06:38 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/20 02:03:44 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -29,21 +29,21 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
      if (flag == 100)
         chunk = n / 5;
     else
-        chunk = n / 10;
+        chunk = n / 8;
      next_chunk = chunk;
      while(*stack_a)
      {
+        // printf(" index **************%d\n", (*stack_a)->index);
         while((*stack_a) && (*stack_a)->index > chunk)
             ra(stack_a);
-        i++;
         if((*stack_a)->index > (chunk - (next_chunk / 2)))
             push_b(stack_a, stack_b);
         else if((*stack_a)->index <= (chunk - (next_chunk / 2)))
             minimize(stack_a, stack_b, chunk);
+        i++;
         if( i == chunk)
            chunk += next_chunk;
     }
-    puts ("now back to stack_a");
     return_to_a(stack_a, stack_b);
 }
 void return_to_a(list_t **stack_a, list_t **stack_b)
@@ -54,8 +54,7 @@ void return_to_a(list_t **stack_a, list_t **stack_b)
     while(stack_size(*stack_b))
     {
         max = max_data(*stack_b);
-        printf(">>> %d\n",max);
-        // fflush(stdout);
+        // printf ("the max >>>> %d\n",max );
         p = get_position(*stack_b, max);
         while((*stack_b)->data != max)
         {

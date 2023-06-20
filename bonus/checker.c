@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 00:58:50 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/19 20:39:25 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/20 02:23:17 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -48,16 +48,19 @@ int main(int ac, char **av)
     if(ac == 1)
         return 0;
     parse(&stack_a, &stack_b, ac, av);
+    printf("....... [ %d next %d next %d next %d \n",stack_a->data, stack_a->link->data , stack_a->link->link->data,  stack_a->link->link->link->data);
     while((operation = get_next_line(0)))
     {
         check_operation1(&stack_a , &stack_b, operation);
         free(operation);
     }
     if(is_sorted(stack_a) && stack_b == NULL)
+    {
+        printf("operation >>> %d its index ********%d\n", stack_a->data, stack_a->index);
         ft_putstr("OK\n");
+    }
     else
         ft_putstr("KO\n");
     free_stack(stack_a);
-    free_stack(stack_b);
     return(0);
 }

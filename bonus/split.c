@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 22:36:33 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/18 23:11:44 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/19 23:16:56 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -102,6 +102,5 @@ char **splitt(char *s, char c)
 			return (_free(res), NULL);
 		i++;
 	}
-	printf("split >> %s\n", res[i]);
 	return (res);
 }
