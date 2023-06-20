@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 17:27:38 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/20 02:03:44 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:08:03 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -33,7 +33,6 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
      next_chunk = chunk;
      while(*stack_a)
      {
-        // printf(" index **************%d\n", (*stack_a)->index);
         while((*stack_a) && (*stack_a)->index > chunk)
             ra(stack_a);
         if((*stack_a)->index < (chunk - (next_chunk / 2)))
@@ -45,6 +44,7 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
            chunk += next_chunk;
     }
     return_to_a(stack_a, stack_b);
+  
 }
 void return_to_a(list_t **stack_a, list_t **stack_b)
 {
@@ -58,10 +58,10 @@ void return_to_a(list_t **stack_a, list_t **stack_b)
         p = get_position(*stack_b, max);
         while((*stack_b)->data != max)
         {
-            if(p < (stack_size(*stack_b) / 2))
-                rb(stack_b);
-            else 
+            if(p > (stack_size(*stack_b) / 2))
                 rrb(stack_b);
+            else 
+                rb(stack_b);
         }
         push_a(stack_a,stack_b);
     }

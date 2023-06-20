@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 20:21:02 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/20 16:38:26 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:13:01 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,19 +23,19 @@ int is_sorted(list_t *stack)
     return(1);
 }
 
-void print_stack(list_t *stack) 
-{
-    printf("Stack: ");
-    while (stack)
-    {
-        printf("%d ", stack->data);
-        stack = stack->link;
-    }
-    printf("\n");
-}
+// void print_stack(list_t *stack) 
+// {
+//     printf("Stack: ");
+//     while (stack)
+//     {
+//         printf("%d ", stack->data);
+//         stack = stack->link;
+//     }
+//     printf("\n");
+// }
 
 void sorting(list_t *stack_a, list_t *stack_b)
-{   
+{   (void)stack_b;
     int size;
     if (is_sorted(stack_a) == 1)
         exit(0);
@@ -56,6 +56,9 @@ void sorting(list_t *stack_a, list_t *stack_b)
         sort_diff_range(&stack_a ,&stack_b, size, 100);
     else
         sort_diff_range(&stack_a ,&stack_b, size, 500);
-    print_stack(stack_a);
+  printf("index >>%d\n", (*stack_a)->index);
+    // print_stack(ack_a);
     free_stack(stack_a);
 }
+
+ 

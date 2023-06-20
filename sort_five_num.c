@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 01:10:29 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/06/20 16:08:19 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:30:41 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,17 +38,17 @@ int get_position(list_t *stack, int data)
     }
     return (-1);  
 }
-void print_list(list_t *list)
-{
-    list_t *tmp = list;
 
-    while(tmp != NULL)
-    {
-        printf("%d ", tmp->data);
-        tmp = tmp->link;
-    }
-    printf("\n");
-}
+// void print_stack(list_t *stack) 
+// {
+//     printf("Stack: ");
+//     while (stack)
+//     {
+//         printf("%d ", stack->data);
+//         stack = stack->link;
+//     }
+//     printf("\n");
+// }
 void sort_five(list_t **stack_a, list_t **stack_b)
 {
     int min;
@@ -67,8 +67,10 @@ void sort_five(list_t **stack_a, list_t **stack_b)
         }
         push_b(stack_a, stack_b);
     }
+    // print_stack(*stack_a);
+    // print_stack(*stack_b);
     sort_three(stack_a);
+    // print_stack(*stack_a);
     while (*stack_b)
-            // printf("%d\n", stack_size(*stack_a));
         push_a(stack_a, stack_b);
 }

@@ -58,7 +58,7 @@ void push_a(list_t **a, list_t **b);
 list_t *last_node(list_t *head);
 void ra(list_t **a);
 void rb(list_t **b);
-// void rr(list_t **b);
+void	rr(list_t **a, list_t **b);
 void rrr(list_t **a, list_t **b);
 void rra(list_t **a);
 void rrb(list_t **b);
