@@ -47,7 +47,7 @@ $(CHECKER) : $(OBJ_BONUS) $(BONUS_HEADER)
 	$(CC) $(CFLAGS) $(OBJ_BONUS) -o $(CHECKER)
 
 # %.o : %.c $(HEADER) 
-# 	$(CC) $(CFLAGS) -c $< -o $@
+#  	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)

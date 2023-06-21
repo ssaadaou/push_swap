@@ -43,5 +43,7 @@ int max_data(list_t *stack)
             max = tmp->data;
         tmp = tmp->link;
     }
+    // printf("max == %d\n", max);
+    exit(0);
     return (max);
 }

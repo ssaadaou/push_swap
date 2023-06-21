@@ -18,8 +18,8 @@ int stack_size(list_t *stack)
 
     while (stack)
     {
-        stack = stack->link;
         size++;
+        stack = stack->link;
     }
     return size;
 }
@@ -38,17 +38,17 @@ int get_position(list_t *stack, int data)
     }
     return (-1);  
 }
-// void print_list(list_t *list)
-// {
-//     list_t *tmp = list;
+void print_list(list_t *list)
+{
+    list_t *tmp = list;
 
-//     while(tmp != NULL)
-//     {
-//         printf("%d ", tmp->data);
-//         tmp = tmp->link;
-//     }
-//     printf("\n");
-// }
+    while(tmp != NULL)
+    {
+        printf("%d ", tmp->data);
+        tmp = tmp->link;
+    }
+    printf("\n");
+}
 void sort_five(list_t **stack_a, list_t **stack_b)
 {
     int min;
@@ -58,7 +58,6 @@ void sort_five(list_t **stack_a, list_t **stack_b)
     {
         min = min_data(*stack_a);
         p = get_position(*stack_a, min);
-        sleep(2);
         while ((*stack_a)->data != min)
         {
             if (p > (stack_size(*stack_a) / 2))
@@ -68,31 +67,8 @@ void sort_five(list_t **stack_a, list_t **stack_b)
         }
         push_b(stack_a, stack_b);
     }
-            // printf("%d\n", stack_size(*stack_a));
     sort_three(stack_a);
     while (*stack_b)
+            // printf("%d\n", stack_size(*stack_a));
         push_a(stack_a, stack_b);
 }
-// void sort_five(list_t **stack_a, list_t **stack_b)
-// {
-//     int index;
-//     int i;
-
-//     while (!is_sorted(*stack_a))
-//     {
-//         i = 0;
-//         index = get_position(*stack_a, min_data(*stack_a));
-//         if (index == -1)
-//             return ;
-//         if (index <= stack_size(*stack_a) / 2)
-//             while (i++ < index)
-//                 ra(stack_a);
-//         else
-//             while (i++ < (stack_size(*stack_a) - index))
-//                 rra(stack_a);
-//         if (!is_sorted(*stack_a))
-//             push_b(stack_a, stack_b);
-//     }
-//     while (*stack_b)
-//         push_a(stack_a, stack_b);
-// }

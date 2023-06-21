@@ -50,7 +50,7 @@ void parse(list_t **stack_a, list_t **stack_b, int ac, char **av)
     (void)stack_b;
     is_empty(ac, av);
     join = mein_strjoin(ac,av," ");
-    printf("join #### %s\n", join);
+    // printf("join #### %s\n", join);
     str = splitt(join, ' ');
     // int j = 0;
     // while(str[j])

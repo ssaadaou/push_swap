@@ -15,6 +15,8 @@
 void sort_three(list_t **stack)
 {
     list_t **tmp = stack;
+    if (is_sorted(*tmp) == 0)
+        return ;
     if((*tmp)->link->data == min_data(*tmp) )
     {
         if((*tmp)->link->link->data == max_data(*tmp))

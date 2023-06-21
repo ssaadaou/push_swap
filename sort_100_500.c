@@ -36,9 +36,9 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
         // printf(" index **************%d\n", (*stack_a)->index);
         while((*stack_a) && (*stack_a)->index > chunk)
             ra(stack_a);
-        if((*stack_a)->index > (chunk - (next_chunk / 2)))
+        if((*stack_a)->index < (chunk - (next_chunk / 2)))
             push_b(stack_a, stack_b);
-        else if((*stack_a)->index <= (chunk - (next_chunk / 2)))
+        else if((*stack_a)->index >= (chunk - (next_chunk / 2)))
             minimize(stack_a, stack_b, chunk);
         i++;
         if( i == chunk)
