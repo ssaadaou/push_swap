@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-// void	leaks()
-// {
-// 	system("leaks push_swap");
-// }
+void	leaks()
+{
+	system("leaks push_swap");
+}
 
 int main(int ac, char **av)
 {
@@ -30,6 +30,6 @@ int main(int ac, char **av)
     parse(&stack_a, &stack_b, ac, av);
     index_node(stack_a);
     sorting(&stack_a, &stack_b);
-
+    free_stack(stack_a);
     return 0;
 }
