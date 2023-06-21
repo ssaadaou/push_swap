@@ -23,17 +23,6 @@ int is_sorted(list_t *stack)
     return(1);
 }
 
-// void print_stack(list_t *stack) 
-// {
-//     printf("Stack: ");
-//     while (stack)
-//     {
-//         printf("%d ", stack->data);
-//         stack = stack->link;
-//     }
-//     printf("\n");
-// }
-
 void sorting(list_t **stack_a, list_t **stack_b)
 {   (void)stack_b;
     int size;
@@ -56,8 +45,6 @@ void sorting(list_t **stack_a, list_t **stack_b)
         sort_diff_range(stack_a ,stack_b, size, 100);
     else
         sort_diff_range(stack_a ,stack_b, size, 500);
-//   printf("index >>%d\n", (*stack_a)->index);
-    // print_stack(ack_a);
 }
 
  

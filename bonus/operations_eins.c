@@ -17,7 +17,7 @@ void sa(list_t **stack)
 	int tmp;
 	
 	if(!*stack || (*stack)->link == NULL)
-		return ; 
+		return ;
 	tmp = (*stack)->data;
 	(*stack)->data = (*stack)->link->data;
 	(*stack)->link->data = tmp;

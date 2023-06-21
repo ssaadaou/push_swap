@@ -36,7 +36,16 @@ void parse(list_t **stack_a, list_t **stack_b, int ac, char **av)
     }
     _free(str);
 }
-
+void print_stack(list_t *stack) 
+{
+    printf("Stack: ");
+    while (stack)
+    {
+        printf("%d ", stack->data);
+        stack = stack->link;
+    }
+    printf("\n");
+}
 int main(int ac, char **av)
 {
     list_t *stack_a;
@@ -45,20 +54,16 @@ int main(int ac, char **av)
 
     stack_a = NULL;
     stack_b = NULL;
-    if(ac == 1)
-        return 0;
+    // if(ac == 1)
+    //     return 0;
     parse(&stack_a, &stack_b, ac, av);
-    // printf("....... [ %d next %d next %d next %d \n",stack_a->data, stack_a->link->data , stack_a->link->link->data,  stack_a->link->link->link->data);
     while((operation = get_next_line(0)))
     {
         check_operation1(&stack_a , &stack_b, operation);
         free(operation);
     }
     if(is_sorted(stack_a) && stack_b == NULL)
-    {
-        printf("operation >>> %d its index ********%d\n", stack_a->data, stack_a->index);
         ft_putstr("OK\n");
-    }
     else
         ft_putstr("KO\n");
     free_stack(stack_a);

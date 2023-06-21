@@ -41,7 +41,7 @@ void check_operation1(list_t **stack_a, list_t **stack_b, char *operation)
     else if (ft_strcmp(operation, "sb\n") == 0)
         sb(stack_b);
     else if (ft_strcmp(operation, "pa\n") == 0)
-        push_a(stack_b, stack_a);
+        push_a(stack_a, stack_b);
     else if (ft_strcmp(operation, "pb\n") == 0)
         push_b(stack_a, stack_b);
     else if (ft_strcmp(operation, "ra\n") == 0)
@@ -61,7 +61,7 @@ void check_operation2(list_t **stack_a, list_t **stack_b, char *operation)
     else if (ft_strcmp(operation, "rrb\n") == 0)
         rrb(stack_b);
     else if (ft_strcmp(operation, "rrr\n") == 0)
-        rrr(stack_a, stack_a);
+        rrr(stack_a, stack_b);
     else
     {
         ft_putstr("Error: wrong operation\n");
