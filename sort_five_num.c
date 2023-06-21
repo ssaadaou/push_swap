@@ -39,16 +39,6 @@ int get_position(list_t *stack, int data)
     return (-1);  
 }
 
-// void print_stack(list_t *stack) 
-// {
-//     printf("Stack: ");
-//     while (stack)
-//     {
-//         printf("%d ", stack->data);
-//         stack = stack->link;
-//     }
-//     printf("\n");
-// }
 void sort_five(list_t **stack_a, list_t **stack_b)
 {
     int min;
@@ -63,7 +53,7 @@ void sort_five(list_t **stack_a, list_t **stack_b)
             if (p > (stack_size(*stack_a) / 2))
                 rra(stack_a);
             else
-                ra(stack_a);
+                ra(stack_a, 0);
         }
         push_b(stack_a, stack_b);
     }

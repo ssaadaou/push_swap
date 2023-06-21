@@ -18,7 +18,7 @@ void minimize(list_t **stack_a, list_t **stack_b , int chunk)
     if((*stack_a) != NULL && (*stack_a)->index > chunk)
         rr(stack_a, stack_b);
     else
-        rb(stack_b);   
+        rb(stack_b, 0);   
 }
 
 void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
@@ -34,7 +34,7 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
      while(*stack_a)
      {
         while((*stack_a) && (*stack_a)->index > chunk)
-            ra(stack_a);
+            ra(stack_a, 0);
         if((*stack_a)->index < (chunk - (next_chunk / 2)))
             push_b(stack_a, stack_b);
         else if((*stack_a)->index >= (chunk - (next_chunk / 2)))
@@ -61,7 +61,7 @@ void return_to_a(list_t **stack_a, list_t **stack_b)
             if(p > (stack_size(*stack_b) / 2))
                 rrb(stack_b);
             else 
-                rb(stack_b);
+                rb(stack_b, 0);
         }
         push_a(stack_a,stack_b);
     }

@@ -29,7 +29,7 @@ int main(int ac, char **av)
         return 0;
     parse(&stack_a, &stack_b, ac, av);
     index_node(stack_a);
-    sorting(stack_a, stack_b);
+    sorting(&stack_a, &stack_b);
 
     return 0;
 }

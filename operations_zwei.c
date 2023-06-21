@@ -24,7 +24,7 @@ list_t *last_node(list_t *head)
 	return(tmp);
 }
 
-void ra(list_t **a)
+void ra(list_t **a, int flag)
 {
 	list_t *first;
 	list_t *last;
@@ -35,10 +35,11 @@ void ra(list_t **a)
 	first->link = NULL;
 	last = last_node(*a);
 	last->link = first;
-	ft_putstr("ra\n");
+	if(flag == 0)
+		ft_putstr("ra\n");
 }
 
-void rb(list_t **b)
+void rb(list_t **b, int flag)
 {
 	list_t *first;
 	list_t *last;
@@ -49,12 +50,13 @@ void rb(list_t **b)
 	first->link = NULL;
 	last = last_node(*b);
 	last->link = first;
-	ft_putstr("rb\n");
+	if(flag == 0)
+		ft_putstr("rb\n");
 }
 void	rr(list_t **a, list_t **b)
 {
-	ra(a);
-	rb(b);
+	ra(a, 1);
+	rb(b, 1);
 	ft_putstr("rr\n");
 }
 
