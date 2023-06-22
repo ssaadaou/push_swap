@@ -20,6 +20,17 @@ void minimize(list_t **stack_a, list_t **stack_b , int chunk)
     else
         rb(stack_b, 0);   
 }
+void print_stack(list_t *stack) 
+{
+    list_t *tmp = stack;
+
+    while (tmp != NULL) {
+        printf("%d ", tmp->data);
+        tmp = tmp->link;
+    }
+
+    printf("\n");
+}
 
 void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
 {
@@ -29,7 +40,7 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
      if (flag == 100)
         chunk = n / 5;
     else
-        chunk = n / 8;
+        chunk = n / 9;
      next_chunk = chunk;
      while(*stack_a)
      {
@@ -43,26 +54,40 @@ void sort_diff_range(list_t **stack_a, list_t **stack_b, int n, int flag)
         if( i == chunk)
            chunk += next_chunk;
     }
-    return_to_a(stack_a, stack_b);
-  
+    // return_to_a(stack_a, stack_b);
+    // print_stack(*stack_a);
 }
 void return_to_a(list_t **stack_a, list_t **stack_b)
 {
     int max =0;
     int p ;
-
+    int pos ;
+    int next_max = 0;
     while(stack_size(*stack_b))
     {
         max = max_data(*stack_b);
-        // printf ("the max >>>> %d\n",max );
         p = get_position(*stack_b, max);
-        while((*stack_b)->data != max)
+        next_max = stack_size(*stack_b) - 1;
+        pos = get_position(*stack_b, next_max);
+        // printf("max >>>> %d\n", max);
+        // printf("NEXT__max ************** %d\n", max);
+        
+        while((*stack_b)->data != max && (*stack_b)->data != next_max )
         {
             if(p > (stack_size(*stack_b) / 2))
                 rrb(stack_b);
             else 
                 rb(stack_b, 0);
         }
-        push_a(stack_a,stack_b);
+        if((*stack_b)->data == max || (*stack_b)->data == next_max)
+        {
+            if(p > pos)
+                push_a(stack_a,stack_b);
+            else
+            {
+                push_a(stack_a,stack_b);
+                sa(stack_a);
+            }
+        }
     }
 }
