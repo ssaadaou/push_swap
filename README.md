@@ -11,13 +11,14 @@ You have two stacks at your disposal: stack a, containing a random set of non-du
 
 - sa (swap a): Swap the top two elements of stack a.
 - sb (swap b): Swap the top two elements of stack b.
-ss: Execute sa and sb simultaneously.
-pa (push a): Move the top element of stack b to the top of stack a.
-pb (push b): Move the top element of stack a to the top of stack b.
-ra (rotate a): Shift up all elements of stack a by one, making the first element the last.
-rb (rotate b): Likewise, but for stack b.
-rr: Execute ra and rb at the same time.
-rra (reverse rotate a): Shift down all elements of stack a by one, making the last element the first.
-rrb (reverse rotate b): Do the same for stack b.
-rrr: Execute rra and rrb simultaneously.
-The ultimate goal is to sort the integers in stack a in ascending order using the fewest instructions possible.
+- ss: Execute sa and sb simultaneously.
+- pa (push a): Move the top element of stack b to the top of stack a.
+- pb (push b): Move the top element of stack a to the top of stack b.
+- ra (rotate a): Shift up all elements of stack a by one, making the first element the last.
+- rb (rotate b): Likewise, but for stack b.
+- rr: Execute ra and rb at the same time.
+- rra (reverse rotate a): Shift down all elements of stack a by one, making the last element the first.
+- rrb (reverse rotate b): Do the same for stack b.
+- rrr: Execute rra and rrb simultaneously.
+
+** The ultimate goal is to sort the integers in stack a in ascending order using the fewest instructions possible. **
