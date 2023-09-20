@@ -9,8 +9,8 @@ the project involves writing a C program that receives a list of integers as arg
 _Stacks and Operations_
 You have two stacks at your disposal: stack a, containing a random set of non-duplicating integers, and stack b, initially empty. Here are the operations you can perform:
 
-sa (swap a): Swap the top two elements of stack a.
-sb (swap b): Swap the top two elements of stack b.
+- sa (swap a): Swap the top two elements of stack a.
+- sb (swap b): Swap the top two elements of stack b.
 ss: Execute sa and sb simultaneously.
 pa (push a): Move the top element of stack b to the top of stack a.
 pb (push b): Move the top element of stack a to the top of stack b.
